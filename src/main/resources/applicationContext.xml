@@ -52,11 +52,15 @@
 				<value>classpath*:com/my/AccountOperation/mapper/*.xml</value>
 			</array>
 		</property>
+		<!-- 给映射的类配置别名 -->  
+        <!-- 默认的别名是model类的首字母小写 -->  
+        <!-- 如：StaffDeploy实体类。别名为：staffDeploy -->  
+<!--         <property name="typeAliasesPackage" value="com.my.AccountOperation.pojo" />  -->
 	</bean>
 	
 	<!-- DAO接口所在包名，Spring会自动查找其下的类。
-			MapperScannerConfigurer：mapper的扫描器，将包下边的mapper接口自动创建代理对象，
-			自动创建到spring容器中，bean的id是mapper的类名（首字母小写）-->  
+		 MapperScannerConfigurer：mapper的扫描器，将包下边的mapper接口自动创建代理对象，
+		  自动创建到spring容器中，bean的id是mapper的类名（首字母小写）-->  
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
     	<!-- 配置扫描包的路径。如果要扫描多个包，中间使用半角逗号分隔。 -->
         <property name="basePackage" value="com.my.AccountOperation.dao" /> 
