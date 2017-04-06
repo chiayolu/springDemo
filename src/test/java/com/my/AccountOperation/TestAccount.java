@@ -3,7 +3,7 @@ package com.my.AccountOperation;
 
 import org.junit.Test;
 
-import com.my.AccountOperation.test.Account;
+import com.my.AccountOperation.test.AccountCeshi;
 import com.my.base.UnitTestBase;
 
 public class TestAccount extends UnitTestBase{
@@ -19,7 +19,7 @@ public class TestAccount extends UnitTestBase{
 		
 	@Test
 	public void testAccount(){
-		Account account = super.getBean("account");
+		AccountCeshi account = super.getBean("account");
 		account.AccountOne();
 	}
 

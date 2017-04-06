@@ -5,7 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Component;
 
 import com.my.AccountOperation.dao.AccountDAO;
-import com.my.AccountOperation.pojo.User;
+import com.my.AccountOperation.pojo.Account;
 import com.my.AccountOperation.service.AccountService;
 
 @Component("accountService")
@@ -15,10 +15,14 @@ public class AccountServiceOne implements AccountService{
 	AccountDAO accountDAO;
 	
 	@Override
-	public void transfer(User user1, User user2, double money) {
+	public void transfer(Account account1, Account account2, double money) {
 		// TODO Auto-generated method stub
-		accountDAO.inMoney(user1, money);
-		accountDAO.outmoney(user2, money);
+		accountDAO.inMoney(account1, money);
+		accountDAO.outmoney(account2, money);
+//		Account account = new Account();
+//		account.setName("User1");
+//		account.setMoney(200);
+//		accountDAO.updateUser(account);
 	}
 
 }

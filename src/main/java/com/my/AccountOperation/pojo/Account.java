@@ -1,6 +1,6 @@
 package com.my.AccountOperation.pojo;
 
-public class User {
+public class Account {
 	
 	private String name;
 	

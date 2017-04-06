@@ -1,6 +1,6 @@
 package com.my.AccountOperation.service;
 
-import com.my.AccountOperation.pojo.User;
+import com.my.AccountOperation.pojo.Account;
 
 /**
  * @author Administrator
@@ -8,5 +8,5 @@ import com.my.AccountOperation.pojo.User;
  */
 public interface AccountService {
 	
-	public void transfer(User user1, User user2, double money);
+	public void transfer(Account account1, Account account2, double money);
 }

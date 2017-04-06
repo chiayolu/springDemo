@@ -10,31 +10,31 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="AccountDAO">
+<mapper namespace="com.my.AccountOperation.dao.AccountDAO">
 
-	<resultMap type="com.my.AccountOperation.pojo.User" id="UserResult">
+	<resultMap type="com.my.AccountOperation.pojo.Account" id="AccountResult">
 		<!-- id为主键，result为普通列 java.sql.Types.得到下面jdbcType的值 -->
 		<id column="id" jdbcType="INTEGER" property="id" />
 		<result column="name" jdbcType="VARCHAR" property="name" />
 		<result column="money" jdbcType="INTEGER" property="money" />
 	</resultMap>
 
-	<select id="queryUserList" parameterType="com.my.AccountOperation.pojo.User"
-		resultMap="UserResult">
+	<select id="queryUserList" parameterType="com.my.AccountOperation.pojo.Account"
+		resultMap="AccountResult">
 		<!-- SELECT * FROM user WHERE id = #{id:INTEGER} -->
 		select id,name,money from account
 	</select>
 
-	<update id="updateUser" parameterType="com.my.AccountOperation.pojo.User">
+	<update id="updateUser" parameterType="com.my.AccountOperation.pojo.Account">
 		update account set money = #{money} where name = #{name}
 	</update>
 	
-	<update id="inMoney" >
-		update account set money = (#{user1.money} + #{money}) where name = #{user1.name}
+	<update id="inMoney" parameterType="map">
+		update account set money = (#{account1.money} + #{money}) where name = #{account1.name}
 	</update>
 	
-	<update id="outmoney" >
-		update account set money = (#{user2.money} - #{money}) where name = #{user2.name}
+	<update id="outmoney" parameterType="map">
+		update account set money = (#{account2.money} - #{money}) where name = #{account2.name}
 	</update>
 
 </mapper>
