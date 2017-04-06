@@ -1,0 +1,17 @@
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- 定义 别名 -->
+	<typeAliases>
+		<!-- 批量别名定义 指定包路径，自动扫描包下边的pojo，定义别名，别名默认为类名（首字母小写或大写）。
+			写了之后可以在写Sql配置文件例如<select>标签中的属性就可以不用写实体的具体路径直接用别名就可以了
+			例如：没有别名这样写<select resultType="com.sjh.entity.VoteUser"> 
+				写了别名就可以这样写<select  resultType="VoteUsers">  -->
+		<package name="com.my.AccountOperation.model" />
+	</typeAliases>
+
+
+</configuration>
