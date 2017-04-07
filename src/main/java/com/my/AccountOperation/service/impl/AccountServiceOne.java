@@ -14,15 +14,21 @@ public class AccountServiceOne implements AccountService{
 	@Resource
 	AccountDAO accountDAO;
 	
+	/**
+	 * 从account1转money的钱数到account2
+	 * */
 	@Override
-	public void transfer(Account account1, Account account2, double money) {
+	public void transfer(Account account1, Account account2, int money) {
 		// TODO Auto-generated method stub
-		accountDAO.inMoney(account1, money);
-		accountDAO.outmoney(account2, money);
-//		Account account = new Account();
-//		account.setName("User1");
-//		account.setMoney(200);
-//		accountDAO.updateUser(account);
+//		accountDAO.inMoney(account1, money);
+//		accountDAO.outmoney(account2, money);
+
+		
+		account1.setMoney(account1.getMoney() - money);
+		account2.setMoney(account2.getMoney() + money);
+		accountDAO.updateUser(account1);
+		accountDAO.updateUser(account2);
+		
 	}
 
 }

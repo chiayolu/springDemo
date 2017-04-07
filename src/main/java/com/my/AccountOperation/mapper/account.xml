@@ -29,6 +29,8 @@
 		update account set money = #{money} where name = #{name}
 	</update>
 	
+	
+	
 	<update id="inMoney" parameterType="map">
 		update account set money = (#{account1.money} + #{money}) where name = #{account1.name}
 	</update>

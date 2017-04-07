@@ -8,5 +8,5 @@ import com.my.AccountOperation.pojo.Account;
  */
 public interface AccountService {
 	
-	public void transfer(Account account1, Account account2, double money);
+	public void transfer(Account account1, Account account2, int money);
 }
