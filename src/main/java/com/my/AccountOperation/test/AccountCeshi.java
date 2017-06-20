@@ -21,8 +21,7 @@ public class AccountCeshi {
 		Account account2 = new Account();
 		account1.setName("user1");
 		account2.setName("user2");
-		account1.setMoney(1000);
-		account2.setMoney(1000);
+
 //		System.out.println("User1:" + user1.getMoney());
 //		System.out.println("User2:" + user2.getMoney());
 		

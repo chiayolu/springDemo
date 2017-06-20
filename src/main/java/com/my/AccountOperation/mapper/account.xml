@@ -24,6 +24,12 @@
 		<!-- SELECT * FROM user WHERE id = #{id:INTEGER} -->
 		select id,name,money from account
 	</select>
+	
+	<select id="getAccountByName" parameterType="String"
+		resultMap="AccountResult">
+		<!-- SELECT * FROM user WHERE id = #{id:INTEGER} -->
+		select id,name,money from account where name = #{_parameter}
+	</select>
 
 	<update id="updateUser" parameterType="com.my.AccountOperation.pojo.Account">
 		update account set money = #{money} where name = #{name}

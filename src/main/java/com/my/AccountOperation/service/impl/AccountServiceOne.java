@@ -24,9 +24,12 @@ public class AccountServiceOne implements AccountService{
 //		accountDAO.outmoney(account2, money);
 
 		
+		account1 = accountDAO.getAccountByName(account1.getName());
+		account2 = accountDAO.getAccountByName(account2.getName());
 		account1.setMoney(account1.getMoney() - money);
 		account2.setMoney(account2.getMoney() + money);
 		accountDAO.updateUser(account1);
+//		System.out.println(1/0);
 		accountDAO.updateUser(account2);
 		
 	}
